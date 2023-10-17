@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>:: position ::</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-size: 2rem;
+        }
+
+        body {
+            height: 200vh;
+        }
+
+        .parent {
+            background-color: darkorange;
+            padding: .25rem;
+            position: relative;
+            height: 100%;
+        }
+
+        .child1 {
+            background-color: #AA1111;
+            padding: .25rem;
+            position: sticky;
+            top: 0;
+        /*  position relative allows you to add these 4 properties:
+            the relative position allows it to move outside of the document
+            flow. Unlike with margin/padding you're moving the element itself
+            */
+            /*top: 20px;*/
+            /*left: 30px;*/
+            /*bottom: 40px;*/
+            /*right: 30px;*/
+        }
+
+        .child2 {
+            background-color: #00AA88;
+            padding: .25rem;
+            /*position: absolute;*/
+        /*  Position absolute removes the element completely from the doc-flow.
+            It will completely ignore any parent etc. For ex: if it's top:0
+            it will be 0px from the parent tag or in this case the html tag
+            So it follows the parent element, if you add position: relative in the
+            parent tag, the child no longer follows the html tag, but the first
+            parent with position relative. */
+            top: 30px;
+            left: 50px;
+        }
+
+        .child3 {
+            background-color: #7D889E;
+            padding: .25rem;
+            position: fixed;
+        /*  position fix will make the element fixed to the screen itself
+            for ex: try putting height:200vh in the body */
+            /*top: 0;*/
+        /*  If you put position:sticky when you scroll and reach the element, from
+            then on it will stick to the top. OBS! The parent needs to be 100% height */
+        }
+
+    </style>
+</head>
+<body>
+<div class="parent">
+    Parent
+    <div class="child1">One</div>
+    <div class="child2">Two</div>
+    <div class="child3">Three</div>
+</div>
+</body>
+</html>

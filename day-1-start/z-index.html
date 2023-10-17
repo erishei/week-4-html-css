@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>:: position :: </title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-size: 2rem;
+        }
+
+        body {
+            height: 200vh;
+        }
+
+        .parent {
+            background-color: darkorange;
+            padding: .25rem;
+            z-index: 5;
+            position: relative;
+        }
+
+        .parent-2 {
+            background-color: darkmagenta;
+            margin-top: 28px;
+            position: relative;
+            z-index: 10;
+            bottom: 200px;
+
+        }
+
+        .child1 {
+            background-color: #AA1111;
+            padding: .25rem;
+            /* What is Z-index?
+            By default the z-index is 0.
+            When you put it to -1, it disappears from view (given that the other elements are
+            still on default/0).
+            The element is still there, it's just been moved to the back of the parent
+            Say you want the element to be on top of the rest you make the z-index
+            number the highest.
+            Google */
+            position: sticky;
+            top: 10px;
+            z-index: 5;
+        }
+
+        .child2 {
+            background-color: #00AA88;
+            padding: .25rem;
+            position: relative;
+            z-index: 40;
+        }
+
+        .child3 {
+            background-color: #7D889E;
+            padding: .25rem;
+            z-index: 20;
+            position: relative;
+            bottom: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="parent">
+    Parent
+    <div class="child1">One</div>
+    <div class="child2">Two</div>
+    <div class="child3">Three</div>
+</div>
+
+<div class="parent-2">
+    Parent 2
+    <div class="child1">One</div>
+    <div class="child2">Two</div>
+    <div class="child3">Three</div>
+</div>
+</body>
+</html>
